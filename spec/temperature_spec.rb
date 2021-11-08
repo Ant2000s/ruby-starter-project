@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require './lib/converter'
-require './lib/input'
-require './lib/correctness'
+require_relative '../lib/terminal'
+require_relative '../lib/converter'
 
 describe Converter do
   describe 'c_to_f' do
@@ -103,5 +102,55 @@ describe Converter do
         expect(obj.k_to_f(100)).to eq(-279.67)
       end
     end
+  end
+end
+
+describe Terminal do
+  describe 'initialtext' do
+    it 'Terminal.initialtext' do
+      expect do
+        Terminal.initialtext
+      end.to output("Temperature converter\n").to_stdout
+    end
+  end
+  describe 'getfrom' do
+    it 'Terminal.getfrom' do
+      expect do
+        Terminal.getfrom
+      end.to output("Enter from (c, f, k)\n").to_stdout
+    end
+  end
+  before do
+    $stdin = StringIO.new('Ab')
+  end
+  describe 'getto' do
+    it 'Terminal.getto' do
+      expect do
+        Terminal.getto
+      end.to output("Enter to (c, f, k)\n").to_stdout
+    end
+  end
+  before do
+    $stdin = StringIO.new('Ab')
+  end
+  describe 'getvalue' do
+    it 'Terminal.getvalue' do
+      expect do
+        Terminal.getvalue
+      end.to output("Enter temperature\n").to_stdout
+    end
+  end
+  before do
+    $stdin = StringIO.new('Ab')
+  end
+  describe 'quitprogram' do
+    it 'Terminal.quitprogram' do
+      expect do
+        Terminal.quitprogram
+      end.to output("enter \"y\" if want quit\n").to_stdout
+    end
+  end
+  before do
+    $stdin = StringIO.new('Ab')
   end
 end

@@ -1,6 +1,6 @@
 class Terminal
   def self.initialtext
-    puts 'Temperature converter'
+    puts "Temperature converter\n"
   end
 
   def self.getfrom
