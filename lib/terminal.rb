@@ -1,24 +1,24 @@
-module Terminal
-  def initial_text
+class Terminal
+  def self.initialtext
     puts 'Temperature converter'
   end
 
-  def get_from
+  def self.getfrom
     puts "Enter from (c, f, k)\n"
     gets.chomp
   end
 
-  def get_to
+  def self.getto
     puts "Enter to (c, f, k)\n"
     gets.chomp
   end
 
-  def get_value
+  def self.getvalue
     puts "Enter temperature\n"
     gets.chomp
   end
 
-  def quit_program
+  def self.quitprogram
     puts "enter \"y\" if want quit\n"
     gets.chomp
   end
