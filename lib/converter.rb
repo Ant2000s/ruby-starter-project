@@ -1,7 +1,3 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
-
-# Description/Explanation of Converter class
 class Converter
   attr_accessor :value
 
